@@ -12,8 +12,11 @@ app.get('/now', function(req, res, next) {
     next();
 }, function(req, res){
     res.send({time: req.time});
-}
-);
+});
+
+app.get('/:word/echo', function(req, res) {
+    res.send({echo: req.params.word});
+});
 
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '/views/index.html');
