@@ -20,6 +20,9 @@ app.get('/now', function(req, res, next) {
 app.route('/name')
     .get(function(req, res) {
         res.send({name: req.query.first+' ' +req.query.last})
+    })
+    .post(function(req, res) {
+        res.send({name: req.body.first+' ' +req.body.last})
     });
 
 app.get('/:word/echo', function(req, res) {
